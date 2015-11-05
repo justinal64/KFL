@@ -1,11 +1,7 @@
 package com.codingrookie.kfl;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Set an image to display
                 ImageView image = (ImageView) layout.findViewById(R.id.image);
-                image.setImageResource(R.drawable.congrats);
+                image.setImageResource(R.drawable.congratz);
 
                 // Toast...
                 Toast toast = new Toast(getApplicationContext());
