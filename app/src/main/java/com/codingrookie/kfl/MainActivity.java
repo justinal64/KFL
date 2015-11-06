@@ -1,7 +1,9 @@
 package com.codingrookie.kfl;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +14,39 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageButton heart;
     ImageButton circle;
     ImageButton triangle;
 
+    // Test displaying a random ImageButon
+/*    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2};
+
+    ImageButton test = (ImageButton) findViewById(R.id.heart);
+    Random generator = new Random();
+    int randomImageId = images[generator.nextInt(images.length)];
+    test.setImageResource(randomImageId);*/
+
+
+    // end of test
+
+
+
+
+    // used to generate random numbers
+    int min = 0;
+    int max = 2;
+    int randomNum;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-/*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
+        int rando = (int) (Math.random() * 2);
+        Log.v("MainActivity","The random number is " + rando);
 
         // This adds the listener to the image
         addListenerOnButton();
@@ -113,5 +136,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    private int numGenerator(){
+        Random r = new Random();
+        randomNum = r.nextInt(max - min + 1) + min;
+        return randomNum;
     }
 }

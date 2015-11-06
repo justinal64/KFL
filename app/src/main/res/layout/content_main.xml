@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/img_3" />
+            android:src="@drawable/img_1" />
     </LinearLayout>
 
     <TextView
