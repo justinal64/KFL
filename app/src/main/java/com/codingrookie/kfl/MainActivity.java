@@ -15,7 +15,6 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
