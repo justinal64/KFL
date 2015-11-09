@@ -1,7 +1,10 @@
 package com.codingrookie.kfl;
+/*
+* Phil 4:13
+* I can do all things through
+* Christ who strengthens me.
+ */
 
-
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,7 +15,6 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Displays the 1/2/3 images respectively after being scrambled.
         img.setImageResource(images[0]);
         img1.setImageResource(images[1]);
         img2.setImageResource(images[2]);
