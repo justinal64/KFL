@@ -19,21 +19,13 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    // No longer needed
     ImageButton heart;
     ImageButton circle;
     ImageButton triangle;
 
-    // Test displaying a random ImageButon
+    // Used to display a random image
     int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2};
-
-
-
-
-
-    // used to generate random numbers
-    int min = 0;
-    int max = 2;
-    int randomNum;
 
     // Test to get random working
     final Random rnd = new Random();
@@ -132,10 +124,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    private int numGenerator(){
-        Random r = new Random();
-        randomNum = r.nextInt(max - min + 1) + min;
-        return randomNum;
     }
 }
