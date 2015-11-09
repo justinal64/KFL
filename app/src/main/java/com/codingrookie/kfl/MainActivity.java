@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton triangle;
 
     // Used to display a random image
-    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2};
+    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
 
     // Test to get random working
     final Random rnd = new Random();
