@@ -13,16 +13,15 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/heart"
+            android:id="@+id/img"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:padding="5dp"
-            android:src="@drawable/img_2" />
+            android:padding="5dp" />
 
         <ImageButton
-            android:id="@+id/circle"
+            android:id="@+id/img1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -31,7 +30,7 @@
             android:src="@drawable/img_0" />
 
         <ImageButton
-            android:id="@+id/triangle"
+            android:id="@+id/img2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

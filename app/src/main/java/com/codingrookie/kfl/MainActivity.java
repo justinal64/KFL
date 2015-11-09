@@ -1,5 +1,6 @@
 package com.codingrookie.kfl;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,15 +24,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton triangle;
 
     // Test displaying a random ImageButon
-/*    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2};
+    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2};
 
-    ImageButton test = (ImageButton) findViewById(R.id.heart);
-    Random generator = new Random();
-    int randomImageId = images[generator.nextInt(images.length)];
-    test.setImageResource(randomImageId);*/
-
-
-    // end of test
 
 
 
@@ -41,24 +35,71 @@ public class MainActivity extends AppCompatActivity {
     int max = 2;
     int randomNum;
 
+    // Test to get random working
+    final Random rnd = new Random();
+    // End of test
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int rando = (int) (Math.random() * 2);
-        Log.v("MainActivity","The random number is " + rando);
 
         // This adds the listener to the image
         addListenerOnButton();
 
     }
 
+    protected final static int getResourceID
+            (final String resName, final String resType, final Context ctx)
+    {
+        final int ResourceID =
+                ctx.getResources().getIdentifier(resName, resType,
+                        ctx.getApplicationInfo().packageName);
+        if (ResourceID == 0)
+        {
+            throw new IllegalArgumentException
+                    (
+                            "No resource string found with name " + resName
+                    );
+        }
+        else
+        {
+            return ResourceID;
+        }
+    }
+
     public void addListenerOnButton() {
 
-        // Listener for the heart
-        heart = (ImageButton) findViewById(R.id.heart);
+        ImageButton img = (ImageButton) findViewById(R.id.img);
+        Random generator = new Random();
+        int randomImageId = images[generator.nextInt(images.length)];
+        img.setImageResource(randomImageId);
 
-        heart.setOnClickListener(new View.OnClickListener() {
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,
+                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ImageButton img1 = (ImageButton) findViewById(R.id.img1);
+        randomImageId = images[generator.nextInt(images.length)];
+        img1.setImageResource(randomImageId);
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,
+                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ImageButton img2 = (ImageButton) findViewById(R.id.img2);
+        randomImageId = images[generator.nextInt(images.length)];
+        img2.setImageResource(randomImageId);
+
+        img2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,
@@ -67,51 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
-        // Listener for the circle
-        circle = (ImageButton) findViewById(R.id.circle);
-
-        circle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // get your custom_toast.xml layout
-                LayoutInflater inflator = getLayoutInflater();
-
-                View layout = inflator.inflate(R.layout.custom_toast,
-                        (ViewGroup) findViewById(R.id.custom_toast_layout_id));
-
-                // Set an image to display
-                ImageView image = (ImageView) layout.findViewById(R.id.image);
-                image.setImageResource(R.drawable.congratz);
-
-                // Toast...
-                Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-                toast.show();
-
-/*                Toast.makeText(MainActivity.this,
-                        "Congratulations your correct!!!", Toast.LENGTH_SHORT).show();*/
-            }
-
-
-        });
-
-        // Listener for the triangle
-        triangle = (ImageButton) findViewById(R.id.triangle);
-
-        triangle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
-            }
-
-
-        });
-
     }
 
 
