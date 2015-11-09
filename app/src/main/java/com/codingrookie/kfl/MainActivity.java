@@ -1,35 +1,26 @@
 package com.codingrookie.kfl;
 
+
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    // No longer needed
-    ImageButton heart;
-    ImageButton circle;
-    ImageButton triangle;
 
     // Used to display a random image
-    int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
+    /*int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
-    // Test to get random working
-    final Random rnd = new Random();
-    // End of test
+    Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,31 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    protected final static int getResourceID
-            (final String resName, final String resType, final Context ctx)
-    {
-        final int ResourceID =
-                ctx.getResources().getIdentifier(resName, resType,
-                        ctx.getApplicationInfo().packageName);
-        if (ResourceID == 0)
-        {
-            throw new IllegalArgumentException
-                    (
-                            "No resource string found with name " + resName
-                    );
-        }
-        else
-        {
-            return ResourceID;
-        }
-    }
-
     public void addListenerOnButton() {
 
+        // Scrambles the images in the array
+        Collections.shuffle(Arrays.asList(images));
+
         ImageButton img = (ImageButton) findViewById(R.id.img);
-        Random generator = new Random();
-        int randomImageId = images[generator.nextInt(images.length)];
-        img.setImageResource(randomImageId);
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageButton img1 = (ImageButton) findViewById(R.id.img1);
-        randomImageId = images[generator.nextInt(images.length)];
-        img1.setImageResource(randomImageId);
 
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ImageButton img2 = (ImageButton) findViewById(R.id.img2);
-        randomImageId = images[generator.nextInt(images.length)];
-        img2.setImageResource(randomImageId);
 
         img2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,11 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
             }
-
-
         });
-    }
 
+        img.setImageResource(images[0]);
+        img1.setImageResource(images[1]);
+        img2.setImageResource(images[2]);
+
+
+    }
 
 
     @Override
