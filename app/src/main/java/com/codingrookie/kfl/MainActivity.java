@@ -7,6 +7,7 @@ package com.codingrookie.kfl;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     /*int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
     Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,35 +42,76 @@ public class MainActivity extends AppCompatActivity {
         // Scrambles the images in the array
         Collections.shuffle(Arrays.asList(images));
 
+        // Sets the question_Image_Button to either image 0 - 2, which will match
+        // one of the images being displayed in the choices above.
+        ImageButton question_Image_Button = (ImageButton) findViewById(R.id.question_Image_Button);
+        int imageIds = (int) (Math.random() * 3);
+
+        // Used to display image in position 0
         ImageButton img = (ImageButton) findViewById(R.id.img);
 
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
-            }
-        });
+        if(imageIds == 0) {
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
+        // Used to display image in position 1
         ImageButton img1 = (ImageButton) findViewById(R.id.img1);
 
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
-            }
-        });
+        if(imageIds == 1) {
+            img1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            img1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                }
+            });
+        };
 
+        // Used to display image in position 2
         ImageButton img2 = (ImageButton) findViewById(R.id.img2);
 
-        img2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this,
-                        "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
-            }
-        });
+        if(imageIds == 2) {
+            img2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            img2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this,
+                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        // Displays the images that the user is trying to match.
+        question_Image_Button.setImageResource(images[imageIds]);
 
         // Displays the 1/2/3 images respectively after being scrambled.
         img.setImageResource(images[0]);

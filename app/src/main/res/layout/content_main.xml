@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:padding="5dp" />
+            android:padding="5dp"
+            android:src="@drawable/img_0"/>
 
         <ImageButton
             android:id="@+id/img1"
@@ -27,7 +28,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/img_0" />
+            android:src="@drawable/img_1" />
 
         <ImageButton
             android:id="@+id/img2"
@@ -36,25 +37,30 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/img_1" />
+            android:src="@drawable/img_2" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButton4"
+        android:layout_above="@+id/question_Image_Button"
         android:layout_centerHorizontal="true"
         android:text="Find the matching images!!!"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="match_parent"
+        android:id="@+id/question_Image_Button"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/img_0" />
+        android:src="@drawable/img_2" />
+
+<!--    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_2"/>-->
 </RelativeLayout>
