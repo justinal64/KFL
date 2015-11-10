@@ -5,6 +5,7 @@ package com.codingrookie.kfl;
 * Christ who strengthens me.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     /*int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
     Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
                 }
             });
+
         } else {
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -80,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
                 }
             });
         } else {
@@ -101,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
                 }
             });
         } else {
@@ -146,4 +153,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
