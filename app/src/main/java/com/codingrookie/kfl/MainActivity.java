@@ -8,6 +8,7 @@ package com.codingrookie.kfl;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +20,9 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    /** Duration of wait **/
+    /**
+     * Duration of wait
+     **/
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     // Used to display random images
@@ -52,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
         // Used to display image in position 0
         ImageButton img = (ImageButton) findViewById(R.id.img);
 
-        if(imageIds == 0) {
+        if (imageIds == 0) {
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    total_Right_Answers = total_Right_Answers + 1;
+                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     refreshImageButton();
                 }
             });
@@ -74,12 +79,14 @@ public class MainActivity extends AppCompatActivity {
         // Used to display image in position 1
         ImageButton img1 = (ImageButton) findViewById(R.id.img1);
 
-        if(imageIds == 1) {
+        if (imageIds == 1) {
             img1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    total_Right_Answers = total_Right_Answers + 1;
+                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     refreshImageButton();
                 }
             });
@@ -91,17 +98,20 @@ public class MainActivity extends AppCompatActivity {
                             "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
                 }
             });
-        };
+        }
+        ;
 
         // Used to display image in position 2
         ImageButton img2 = (ImageButton) findViewById(R.id.img2);
 
-        if(imageIds == 2) {
+        if (imageIds == 2) {
             img2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    total_Right_Answers = total_Right_Answers + 1;
+                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     refreshImageButton();
                 }
             });
