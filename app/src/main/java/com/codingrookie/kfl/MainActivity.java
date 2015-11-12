@@ -5,11 +5,9 @@ package com.codingrookie.kfl;
 * Christ who strengthens me.
  */
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,15 +16,17 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    /** Duration of wait **/
+    private final int SPLASH_DISPLAY_LENGTH = 1000;
 
-    // Used to display a random image
-    /*int[] images = {R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
-
+    // Used to display random images
     Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
+
+    int total_Right_Answers = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
-        // Scrambles the images in the array
-        Collections.shuffle(Arrays.asList(images));
+        scrambleArray();
 
         // Sets the question_Image_Button to either image 0 - 2, which will match
-        // one of the images being displayed in the choices above.
+        // Chooses a random image between 0 - 2 of the array images
         ImageButton question_Image_Button = (ImageButton) findViewById(R.id.question_Image_Button);
         int imageIds = (int) (Math.random() * 3);
 
@@ -59,11 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
+                    refreshImageButton();
                 }
             });
-
         } else {
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -83,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
+                    refreshImageButton();
                 }
             });
         } else {
@@ -106,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(MainActivity.this,
                             "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
+                    refreshImageButton();
                 }
             });
         } else {
@@ -152,6 +147,26 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /*
+    * Scrambles the images in the array
+    */
+    public void scrambleArray() {
+
+        Collections.shuffle(Arrays.asList(images));
+
+    }
+
+    /*
+     * This is used to refresh img, img1, and img2 and question_Image_Button once
+     * the user has picked the matching images.
+    */
+
+    public void refreshImageButton() {
+        scrambleArray();
+        addListenerOnButton();
+
     }
 
 }
