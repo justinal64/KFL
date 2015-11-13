@@ -6,6 +6,7 @@ package com.codingrookie.kfl;
  */
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -81,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v) {
-                    displayCorrectToast();
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
+                    displayCorrectToast();
                     refreshImages();
                 }
             });
@@ -203,15 +204,17 @@ public class MainActivity extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
-        // set a dummy image
+        // set congratz image
         ImageView image = (ImageView) layout.findViewById(R.id.image);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
         image.setImageResource(R.drawable.congratz);
 
 
-        // Toast...
+
+        // display toast
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
     }
@@ -220,8 +223,24 @@ public class MainActivity extends AppCompatActivity {
     * Displays a custom message when the user selects the wrong answer.
      */
     public void displayIncorrectToast() {
-        Toast.makeText(MainActivity.this,
-                "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+        LayoutInflater inflater = getLayoutInflater();
+
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
+        // set congratz image
+        ImageView image = (ImageView) layout.findViewById(R.id.image);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
+        image.setImageResource(R.drawable.sorry);
+
+
+
+        // display toast
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
     }
 
 }
