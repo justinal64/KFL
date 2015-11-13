@@ -9,10 +9,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -47,6 +51,22 @@ public class MainActivity extends AppCompatActivity {
 
         scrambleArray();
 
+/*        LayoutInflater inflater = getLayoutInflater();
+
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
+        // set a dummy image
+        ImageView image = (ImageView) layout.findViewById(R.id.image);
+        image.setImageResource(R.drawable.congratz);*/
+
+        // set a message
+/*                TextView text = (TextView) layout.findViewById(R.id.text);
+                text.setText("That is the correct answer!");*/
+
+
+
+
         // Sets the question_Image_Button to either image 0 - 2, which will match
         // Chooses a random image between 0 - 2 of the array images
         ImageButton question_Image_Button = (ImageButton) findViewById(R.id.question_Image_Button);
@@ -57,21 +77,21 @@ public class MainActivity extends AppCompatActivity {
 
         if (imageIds == 0) {
             img.setOnClickListener(new View.OnClickListener() {
+
+
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    displayCorrectToast();
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImageButton();
+                    refreshImages();
                 }
             });
         } else {
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                    displayIncorrectToast();
                 }
             });
         }
@@ -83,23 +103,20 @@ public class MainActivity extends AppCompatActivity {
             img1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    displayCorrectToast();
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImageButton();
+                    refreshImages();
                 }
             });
         } else {
             img1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                    displayIncorrectToast();
                 }
             });
-        }
-        ;
+        };
 
         // Used to display image in position 2
         ImageButton img2 = (ImageButton) findViewById(R.id.img2);
@@ -108,19 +125,17 @@ public class MainActivity extends AppCompatActivity {
             img2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Congratulations that is correct!!!", Toast.LENGTH_SHORT).show();
+                    displayCorrectToast();
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImageButton();
+                    refreshImages();
                 }
             });
         } else {
             img2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(MainActivity.this,
-                            "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
+                    displayIncorrectToast();
                 }
             });
         }
@@ -173,10 +188,40 @@ public class MainActivity extends AppCompatActivity {
      * the user has picked the matching images.
     */
 
-    public void refreshImageButton() {
+    public void refreshImages() {
         scrambleArray();
         addListenerOnButton();
 
+    }
+
+    /*
+    * Displays a custom toast when the user gets the answer correct
+     */
+    public void displayCorrectToast() {
+        LayoutInflater inflater = getLayoutInflater();
+
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
+        // set a dummy image
+        ImageView image = (ImageView) layout.findViewById(R.id.image);
+        image.setImageResource(R.drawable.congratz);
+
+
+        // Toast...
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    /*
+    * Displays a custom message when the user selects the wrong answer.
+     */
+    public void displayIncorrectToast() {
+        Toast.makeText(MainActivity.this,
+                "Sorry that doesn't match try again", Toast.LENGTH_SHORT).show();
     }
 
 }
