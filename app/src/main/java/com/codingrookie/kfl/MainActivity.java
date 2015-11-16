@@ -5,6 +5,7 @@ package com.codingrookie.kfl;
 * Christ who strengthens me.
  */
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.webkit.WebBackForwardList;
+import android.webkit.WebView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -28,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Duration of wait
      **/
-
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     // Used to display random images
@@ -51,22 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void addListenerOnButton() {
 
+        /*
+        * Scramble the images in the array images
+         */
         scrambleArray();
-
-/*        LayoutInflater inflater = getLayoutInflater();
-
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
-
-        // set a dummy image
-        ImageView image = (ImageView) layout.findViewById(R.id.image);
-        image.setImageResource(R.drawable.congratz);*/
-
-        // set a message
-/*                TextView text = (TextView) layout.findViewById(R.id.text);
-                text.setText("That is the correct answer!");*/
-
-
 
 
         // Sets the question_Image_Button to either image 0 - 2, which will match
@@ -200,7 +190,30 @@ public class MainActivity extends AppCompatActivity {
     * Displays a custom toast when the user gets the answer correct
      */
     public void displayCorrectToast() {
+
         LayoutInflater inflater = getLayoutInflater();
+
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.webViewTester));
+
+        WebView image = (WebView) layout.findViewById(R.id.webViewTester);
+        image.loadUrl("file:///android_asset/congrats.gif");
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+
+
+
+ /*       setContentView(R.layout.custom_toast);
+
+        WebView wv = (WebView) findViewById(R.id.webViewTester);
+        wv.loadUrl("file:///res/drawable/congrats.gif");*/
+
+
+/*        LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
@@ -213,11 +226,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         // display toast
-        Toast toast = new Toast(getApplicationContext());
+/*        Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
-        toast.show();
+        toast.show();*/
     }
 
     /*
