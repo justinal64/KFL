@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Duration of wait
      **/
+
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     // Used to display random images
