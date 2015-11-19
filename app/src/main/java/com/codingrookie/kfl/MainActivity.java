@@ -43,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        /*Removed the Toolbar*/
+/*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
 
         // This adds the listener to the image
         addListenerOnButton();
@@ -194,9 +196,9 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.webViewTester));
+                (ViewGroup) findViewById(R.id.congratz_Web_View));
 
-        WebView image = (WebView) layout.findViewById(R.id.webViewTester);
+        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
         image.loadUrl("file:///android_asset/congrats.gif");
 
         Toast toast = new Toast(getApplicationContext());
