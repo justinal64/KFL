@@ -5,7 +5,7 @@
     android:id="@+id/rLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="@drawable/border"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
@@ -13,9 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="20dp"
-        android:background="@color/imageBackground">
+        android:background="@drawable/sky"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,58 +47,56 @@
                 android:background="@android:color/transparent"
                 android:padding="5dp"
                 android:src="@drawable/img_2" />
+
         </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1.5"></RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/answer_Relative_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/black" />
+
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
                 android:padding="10dp"
-                android:src="@drawable/homebutton"/>
+                android:src="@drawable/homebutton" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/question_Image_Button"
                 android:layout_centerHorizontal="true"
-                android:text="Which two Images Match?"
+                android:text="Which image matches this?"
+                android:background="#ffffff"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000" />
+                android:textColor="#000000"
+                android:layout_margin="2dp"/>
+
             <ImageButton
                 android:id="@+id/question_Image_Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:paddingBottom="10dp"
                 android:background="@android:color/transparent"
+                android:paddingBottom="10dp"
                 android:src="@drawable/img_2" />
 
         </RelativeLayout>
     </LinearLayout>
-
-<!--    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/question_Image_Button"
-        android:layout_centerHorizontal="true"
-        android:text="Which two Images Match?"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000000" />-->
-
-<!--    <ImageButton
-        android:id="@+id/question_Image_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/transparent"
-        android:src="@drawable/img_2" />-->
-
-
 </RelativeLayout>

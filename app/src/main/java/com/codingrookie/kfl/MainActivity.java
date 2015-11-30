@@ -239,14 +239,13 @@ public class MainActivity extends AppCompatActivity {
     * Displays a custom message when the user selects the wrong answer.
      */
     public void displayIncorrectToast() {
-        LayoutInflater inflater = getLayoutInflater();
+/*        LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
         // set congratz image
         ImageView image = (ImageView) layout.findViewById(R.id.image);
-        image.setScaleType(ImageView.ScaleType.FIT_XY);
         image.setImageResource(R.drawable.sorry);
 
 
@@ -255,6 +254,20 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
         toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();*/
+
+        LayoutInflater inflater = getLayoutInflater();
+
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.congratz_Web_View));
+
+        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
+        image.loadUrl("file:///android_asset/sorry.gif");
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
     }
