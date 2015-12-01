@@ -5,7 +5,7 @@
     android:id="@+id/rLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/border"
+    android:background="@drawable/sky"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
@@ -13,7 +13,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/sky"
         android:orientation="vertical">
 
         <LinearLayout
@@ -68,12 +67,14 @@
 
 
             <ImageButton
+                android:id="@+id/homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:padding="10dp"
-                android:src="@drawable/homebutton" />
+                android:src="@drawable/homebutton"
+                android:onClick=""/>
 
             <TextView
                 android:id="@+id/textView"
