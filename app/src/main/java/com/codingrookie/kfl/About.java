@@ -16,12 +16,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class StartPage extends AppCompatActivity {
+public class About extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.about);
 /*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,41 +34,19 @@ public class StartPage extends AppCompatActivity {
             }
         });*/
 
-        ImageButton img = (ImageButton) findViewById(R.id.homeButton);
+/*        ImageButton img = (ImageButton) findViewById(R.id.homeButton);
 
-            img.setOnClickListener(new View.OnClickListener() {
-
-
-                @Override
-                public void onClick(View v) {
-                    // listener for onClick
-                    sortShapes();
-                }
-            });
-
-        ImageButton img1 = (ImageButton) findViewById(R.id.about);
-
-        img1.setOnClickListener(new View.OnClickListener() {
+        img.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
                 // listener for onClick
-                about();
+                sortShapes();
             }
-        });
-
-        ImageButton img2 = (ImageButton) findViewById(R.id.uidesign);
-
-        img2.setOnClickListener(new View.OnClickListener() {
+        });*/
 
 
-            @Override
-            public void onClick(View v) {
-                // listener for onClick
-                uidesign();
-            }
-        });
     }
 
     @Override

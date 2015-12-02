@@ -34,12 +34,31 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageButton
-        android:id="@+id/developer"
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_below="@+id/aboutDeveloper"
         android:layout_centerHorizontal="true"
         android:src="@drawable/homebutton"
-        android:onClick="sortShapes"/>
+        android:onClick="about"/>
+    <TextView
+        android:id="@+id/uidesign_Text_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="UI Design Ideas"
+        android:layout_below="@+id/about"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/uidesign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/uidesign_Text_View"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/homebutton"
+        android:onClick="uiDesign"/>
 </RelativeLayout>
