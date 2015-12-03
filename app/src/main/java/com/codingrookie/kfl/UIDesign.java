@@ -32,7 +32,37 @@ public class UIDesign extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.uidesign);
 
+        // Setting up a listener to turn steering wheel when clicked
 
+        final ImageButton about = (ImageButton) findViewById(R.id.about);
+
+
+        about.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                turnSteeringWheel(about);
+            }
+        });
+        // End of steering wheel event
+
+        // Setting up a listener to turn steering wheel when clicked
+
+        final ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                turnSteeringWheel(homeButton);
+            }
+        });
+        // End of steering wheel event
 
 
         // Setting up a listener to turn steering wheel when clicked
