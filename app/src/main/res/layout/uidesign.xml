@@ -1,20 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is the UIDesign page!!"
-        android:onClick=""/>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/car_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66ccff"
+    tools:context=".PropertyAnimatedActivity" >
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/sun"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/sun"
+        android:paddingLeft="100dp"
+        android:paddingTop="45dp"
+        android:src="@drawable/sun" />
+
+    <ImageView
+        android:id="@+id/cloud1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cloud"
+        android:paddingLeft="170dp"
+        android:paddingTop="70dp"
+        android:src="@drawable/cloud" />
+
+    <ImageView
+        android:id="@+id/cloud2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cloud"
+        android:paddingLeft="200dp"
+        android:paddingTop="90dp"
+        android:src="@drawable/cloud" />
+
+    <ImageView
+        android:id="@+id/ground"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/ground"
+        android:padding="40dp"
+        android:src="@drawable/ground" />
+
+    <ImageView
+        android:id="@+id/window"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/window"
+        android:src="@drawable/window" />
+    <ImageButton
+        android:id="@+id/wheel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/sky"
-        />
+        android:contentDescription="@string/wheel"
+        android:background="@null"
+        android:padding="3dp"
+        android:src="@drawable/steering_wheel" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Would you like to match shapes?"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/homebutton"
+        android:onClick="sortShapes"/>
+    <TextView
+        android:id="@+id/aboutDeveloper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Learn about the creator"
+        android:layout_below="@+id/homeButton"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/aboutDeveloper"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/homebutton"
+        android:onClick="about"/>
+<!--    <TextView
+        android:id="@+id/uidesign_Text_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="UI Design Ideas"
+        android:layout_below="@+id/about"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/uidesign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/uidesign_Text_View"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/homebutton"
+        android:onClick="uiDesign"/>-->
 
 </RelativeLayout>
