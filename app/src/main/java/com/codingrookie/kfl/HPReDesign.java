@@ -1,11 +1,5 @@
 package com.codingrookie.kfl;
-/*
-* Phil 4:13
-* I can do all things through
-* Christ who strengthens me.
- */
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,15 +7,18 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-public class StartPage extends AppCompatActivity {
+/**
+ * Created by justin.leggett on 12/11/2015.
+ */
+public class HPReDesign extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_page);
+        setContentView(R.layout.hpredesign);
 /*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -34,19 +31,19 @@ public class StartPage extends AppCompatActivity {
             }
         });*/
 
-        ImageButton img = (ImageButton) findViewById(R.id.homeButton);
+        Button img = (Button) findViewById(R.id.button1);
 
-            img.setOnClickListener(new View.OnClickListener() {
+        img.setOnClickListener(new View.OnClickListener() {
 
 
-                @Override
-                public void onClick(View v) {
-                    // listener for onClick
-                    sortShapes();
-                }
-            });
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                test();
+            }
+        });
 
-        ImageButton img1 = (ImageButton) findViewById(R.id.about);
+        Button img1 = (Button) findViewById(R.id.button2);
 
         img1.setOnClickListener(new View.OnClickListener() {
 
@@ -54,11 +51,11 @@ public class StartPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // listener for onClick
-                about();
+                test();
             }
         });
 
-        ImageButton img2 = (ImageButton) findViewById(R.id.uidesign);
+        Button img2 = (Button) findViewById(R.id.button3);
 
         img2.setOnClickListener(new View.OnClickListener() {
 
@@ -66,19 +63,7 @@ public class StartPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // listener for onClick
-                uidesign();
-            }
-        });
-
-        ImageButton img3 = (ImageButton) findViewById(R.id.hpredesign);
-
-        img3.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                // listener for onClick
-                hpredesign();
+                test();
             }
         });
     }
@@ -122,11 +107,8 @@ public class StartPage extends AppCompatActivity {
         Intent intent = new Intent(this, UIDesign.class);
         startActivity(intent);
     }
+    public void test(){
+        Log.v("MainActivity", "Test was clicked!!!");
 
-    public void hpredesign(){
-        // Call SortShapes.java
-        Intent intent = new Intent(this, HPReDesign.class);
-        startActivity(intent);
     }
-
 }
