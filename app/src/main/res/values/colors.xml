@@ -8,4 +8,7 @@
     <color name="lightblue">#03a9f4</color>
     <color name="accentcolor">#7c4dff</color>
     <color name="lightprimarycolor">#b3e5fc</color>
+    <color name="darkprimarycolor">#0288d1</color>
+    <color name="dividercolor">#b6b6b6</color>
+
 </resources>

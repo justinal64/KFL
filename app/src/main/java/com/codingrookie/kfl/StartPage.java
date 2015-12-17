@@ -81,6 +81,18 @@ public class StartPage extends AppCompatActivity {
                 hpredesign();
             }
         });
+
+        ImageButton img4 = (ImageButton) findViewById(R.id.matchShapes);
+
+        img4.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                matchShapes();
+            }
+        });
     }
 
     @Override
@@ -126,6 +138,12 @@ public class StartPage extends AppCompatActivity {
     public void hpredesign(){
         // Call SortShapes.java
         Intent intent = new Intent(this, HPReDesign.class);
+        startActivity(intent);
+    }
+
+    public void matchShapes(){
+        // Call SortShapes.java
+        Intent intent = new Intent(this, MatchShapes.class);
         startActivity(intent);
     }
 
