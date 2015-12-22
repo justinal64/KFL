@@ -42,7 +42,7 @@ public class StartPage extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // listener for onClick
-                    sortShapes();
+                    matchShapes();
                 }
             });
 
@@ -55,18 +55,6 @@ public class StartPage extends AppCompatActivity {
             public void onClick(View v) {
                 // listener for onClick
                 about();
-            }
-        });
-
-        ImageButton img2 = (ImageButton) findViewById(R.id.uidesign);
-
-        img2.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                // listener for onClick
-                uidesign();
             }
         });
 
@@ -117,21 +105,9 @@ public class StartPage extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void sortShapes(){
-        // Call SortShapes.java
-        Intent intent = new Intent(this, SortShapes.class);
-        startActivity(intent);
-    }
-
     public void about(){
         // Call SortShapes.java
         Intent intent = new Intent(this, About.class);
-        startActivity(intent);
-    }
-
-    public void uidesign(){
-        // Call SortShapes.java
-        Intent intent = new Intent(this, UIDesign.class);
         startActivity(intent);
     }
 

@@ -44,26 +44,13 @@ public class MatchShapes extends AppCompatActivity{
         setSupportActionBar(toolbar);*/
 
         // This adds the listener to the image
+        scrambleArray();
         addListenerOnButton();
 
     }
 
     public void addListenerOnButton() {
 
-        /*
-        * Scramble the images in the array images
-         */
-        scrambleArray();
-
-/*        ImageButton home = (ImageButton) findViewById(R.id.homeButton);
-        home.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-                homePage();
-            }
-        });*/
 
         // Sets the question_Image_Button to either image 0 - 2, which will match
         // Chooses a random image between 0 - 2 of the array images
@@ -71,6 +58,19 @@ public class MatchShapes extends AppCompatActivity{
         int imageIds = (int) (Math.random() * 3);
 
         // Used to display image in position 0
+
+        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+
+
+            homeButton.setOnClickListener(new View.OnClickListener() {
+
+
+                @Override
+                public void onClick(View v) {
+                    // listener for onClick
+                    homePage();
+                }
+            });
 
 
         Button img = (Button) findViewById(R.id.img);
@@ -147,50 +147,6 @@ public class MatchShapes extends AppCompatActivity{
                 }
             });
         }
-
-        // Used to display image in position 1
-/*        ImageButton img1 = (ImageButton) findViewById(R.id.img1);
-
-        if (imageIds == 1) {
-            img1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayCorrectToast();
-                    total_Right_Answers = total_Right_Answers + 1;
-                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImages();
-                }
-            });
-        } else {
-            img1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayIncorrectToast();
-                }
-            });
-        };
-
-        // Used to display image in position 2
-        ImageButton img2 = (ImageButton) findViewById(R.id.img2);
-
-        if (imageIds == 2) {
-            img2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayCorrectToast();
-                    total_Right_Answers = total_Right_Answers + 1;
-                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImages();
-                }
-            });
-        } else {
-            img2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayIncorrectToast();
-                }
-            });
-        }*/
 
         // Displays the images that the user is trying to match.
         question_Image_Button.setBackgroundResource(images[imageIds]);

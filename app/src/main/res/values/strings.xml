@@ -7,4 +7,6 @@
     <string name="window">Window Frame</string>
     <string name="sun">The Sun</string>
     <string name="cloud">A Cloud</string>
+    <string name="title_activity_test">test</string>
+    <string name="title_activity_about">About</string>
 </resources>

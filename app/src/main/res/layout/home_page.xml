@@ -22,7 +22,7 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:src="@drawable/homebutton"
-        android:onClick="sortShapes"/>
+        android:onClick="matchShapes"/>
     <TextView
         android:id="@+id/aboutDeveloper"
         android:layout_width="wrap_content"
@@ -52,15 +52,6 @@
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageButton
-        android:id="@+id/uidesign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_below="@+id/uidesign_Text_View"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/homebutton"
-        android:onClick="uiDesign"/>
 
     <ImageButton
         android:id="@+id/hpredesign"
@@ -68,7 +59,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_alignParentLeft="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/homebutton"
         android:onClick="hpredesign"/>
 
@@ -77,8 +68,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
         android:src="@drawable/homebutton"
-        android:onClick="hpredesign"/>
+        android:onClick="hpredesign"
+        android:layout_below="@+id/uidesign_Text_View"
+        android:layout_alignLeft="@+id/about"
+        android:layout_alignStart="@+id/about" />
 </RelativeLayout>

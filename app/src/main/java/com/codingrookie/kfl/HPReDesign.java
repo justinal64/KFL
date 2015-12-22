@@ -6,30 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.transition.TransitionManager;
 
 /**
  * Created by justin.leggett on 12/11/2015.
  */
 public class HPReDesign extends AppCompatActivity{
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hpredesign);
-/*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         Button img = (Button) findViewById(R.id.button1);
 
@@ -90,11 +86,6 @@ public class HPReDesign extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public void sortShapes(){
-        // Call SortShapes.java
-        Intent intent = new Intent(this, SortShapes.class);
-        startActivity(intent);
-    }
 
     public void about(){
         // Call SortShapes.java
@@ -102,11 +93,6 @@ public class HPReDesign extends AppCompatActivity{
         startActivity(intent);
     }
 
-    public void uidesign(){
-        // Call SortShapes.java
-        Intent intent = new Intent(this, UIDesign.class);
-        startActivity(intent);
-    }
     public void test(){
         Log.v("MainActivity", "Test was clicked!!!");
 
