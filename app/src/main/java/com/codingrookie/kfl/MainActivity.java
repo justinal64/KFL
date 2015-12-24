@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     displayIncorrectToast();
                 }
             });
-        };
+        }
 
         // Used to display image in position 2
         ImageButton img2 = (ImageButton) findViewById(R.id.img2);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         // Displays the images that the user is trying to match.
         question_Image_Button.setImageResource(images[imageIds]);
 
-        // Displays the 1/2/3 images respectively after being scrambled.
+        // Displays images in position 0/1/2 respectively.
         img.setImageResource(images[0]);
         img1.setImageResource(images[1]);
         img2.setImageResource(images[2]);
@@ -174,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
     public void scrambleArray() {
 
         Collections.shuffle(Arrays.asList(images));
-
     }
 
     /*
@@ -185,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
     public void refreshImages() {
         scrambleArray();
         addListenerOnButton();
-
     }
 
     /*
@@ -207,55 +205,12 @@ public class MainActivity extends AppCompatActivity {
         toast.setView(layout);
         toast.show();
 
-
-
- /*       setContentView(R.layout.custom_toast);
-
-        WebView wv = (WebView) findViewById(R.id.webViewTester);
-        wv.loadUrl("file:///res/drawable/congrats.gif");*/
-
-
-/*        LayoutInflater inflater = getLayoutInflater();
-
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
-
-        // set congratz image
-        ImageView image = (ImageView) layout.findViewById(R.id.image);
-        image.setScaleType(ImageView.ScaleType.FIT_XY);
-        image.setImageResource(R.drawable.congratz);
-
-
-
-        // display toast
-/*        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();*/
     }
 
     /*
     * Displays a custom message when the user selects the wrong answer.
      */
     public void displayIncorrectToast() {
-/*        LayoutInflater inflater = getLayoutInflater();
-
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
-
-        // set congratz image
-        ImageView image = (ImageView) layout.findViewById(R.id.image);
-        image.setImageResource(R.drawable.sorry);
-
-
-
-        // display toast
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.FILL_HORIZONTAL|Gravity.FILL_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-        toast.show();*/
 
         LayoutInflater inflater = getLayoutInflater();
 
