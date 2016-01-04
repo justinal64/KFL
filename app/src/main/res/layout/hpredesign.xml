@@ -128,7 +128,6 @@
 
         <Button
             android:id="@+id/angry_btn"
-
             android:text="Games?"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
@@ -143,7 +142,6 @@
 
         <Button
             android:id="@+id/angry_btn1"
-
             android:text="Games?"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
@@ -156,7 +154,6 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             />
-
 
     </RelativeLayout>
 
