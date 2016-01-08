@@ -54,14 +54,14 @@
             android:layout_height="0dp"
             android:layout_weight="2">
 
-            <View
+<!--            <View
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:layout_above="@+id/textView"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:background="@android:color/black" />
+                android:background="@android:color/black" />-->
 
 
 <!--            <ImageButton
@@ -81,7 +81,7 @@
                 android:layout_above="@+id/question_Image_Button"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="2dp"
-                android:background="#ffffff"
+                android:textSize="26dp"
                 android:text="Find the Matching Image"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000000" />
