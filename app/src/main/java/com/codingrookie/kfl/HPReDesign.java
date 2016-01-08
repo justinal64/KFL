@@ -62,6 +62,18 @@ public class HPReDesign extends AppCompatActivity{
                 test();
             }
         });
+
+        Button img3 = (Button) findViewById(R.id.button4);
+
+        img3.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                test();
+            }
+        });
     }
 
     @Override
@@ -94,7 +106,7 @@ public class HPReDesign extends AppCompatActivity{
     }
 
     public void test(){
-        Log.v("MainActivity", "Test was clicked!!!");
+        Log.v("MainActivity", "Button was clicked!!!");
 
     }
 }

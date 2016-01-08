@@ -29,7 +29,10 @@ public class MatchShapes extends AppCompatActivity{
     private final int SPLASH_DISPLAY_LENGTH = 1000;
 
     // Used to display random images
-    Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
+    /*Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
+
+    Integer[] images = new Integer[]{R.drawable.fish, R.drawable.horse, R.drawable.ladybug, R.drawable.leopard, R.drawable.bird, R.drawable.bull, R.drawable.lion, R.drawable.cat,
+            R.drawable.lobster, R.drawable.cow, R.drawable.rabbit, R.drawable.dog, R.drawable.snail, R.drawable.duck, R.drawable.turtle, R.drawable.elephant, R.drawable.bird_contour};
 
     int total_Right_Answers = 0;
 
