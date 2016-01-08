@@ -2,6 +2,7 @@ package com.codingrookie.kfl;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -12,7 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -31,10 +33,14 @@ public class MatchShapes extends AppCompatActivity{
     // Used to display random images
     /*Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
-    Integer[] images = new Integer[]{R.drawable.fish, R.drawable.horse, R.drawable.ladybug, R.drawable.leopard, R.drawable.bird, R.drawable.bull, R.drawable.lion, R.drawable.cat,
+    Integer[] images = new Integer[]{R.drawable.fish, R.drawable.horse, R.drawable.ladybug, R.drawable.leopard, R.drawable.bull, R.drawable.lion, R.drawable.cat,
             R.drawable.lobster, R.drawable.cow, R.drawable.rabbit, R.drawable.dog, R.drawable.snail, R.drawable.duck, R.drawable.turtle, R.drawable.elephant, R.drawable.bird};
 
     int total_Right_Answers = 0;
+
+
+
+
 
 
     @Override
@@ -76,7 +82,7 @@ public class MatchShapes extends AppCompatActivity{
             });*/
 
 
-        Button img = (Button) findViewById(R.id.img);
+        final Button img = (Button) findViewById(R.id.img);
 
         if(imageIds == 0) {
 
@@ -101,8 +107,7 @@ public class MatchShapes extends AppCompatActivity{
             });
         }
 
-        Button img1 = (Button) findViewById(R.id.img1);
-
+        final Button img1 = (Button) findViewById(R.id.img1);
         if(imageIds == 1) {
 
             img1.setOnClickListener(new View.OnClickListener() {
@@ -126,8 +131,8 @@ public class MatchShapes extends AppCompatActivity{
             });
         }
 
-        Button img2 = (Button) findViewById(R.id.img2);
 
+        final Button img2 = (Button) findViewById(R.id.img2);
         if(imageIds == 2) {
 
             img2.setOnClickListener(new View.OnClickListener() {
@@ -237,6 +242,8 @@ public class MatchShapes extends AppCompatActivity{
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.congratz_Web_View));
 
+
+
         WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
         image.loadUrl("file:///android_asset/sorry.gif");
 
@@ -245,6 +252,23 @@ public class MatchShapes extends AppCompatActivity{
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+
+
+
+
+
+        // Hide the whole screen
+/*        LinearLayout wholeLayout = (LinearLayout) findViewById(R.id.wholeLayout);
+        wholeLayout.setVisibility(View.INVISIBLE);
+
+        // Disable incorrectAnswer
+        ImageView incorrectAnswer = (ImageView) findViewById(R.id.sorry);
+        incorrectAnswer.setVisibility(View.VISIBLE);*/
+
+
+/*        incorrectAnswer.setVisibility(View.INVISIBLE);
+        wholeLayout.setVisibility(View.VISIBLE);*/
+
     }
 
     public void homePage(){
