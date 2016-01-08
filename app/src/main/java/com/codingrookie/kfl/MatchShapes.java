@@ -33,6 +33,9 @@ public class MatchShapes extends AppCompatActivity{
     // Used to display random images
     /*Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
+    // Make sure it is ok to use these!!!!!
+    /*http://iconsparadise.com/animal-free-icons/animals-mini/*/
+
     Integer[] images = new Integer[]{R.drawable.fish, R.drawable.horse, R.drawable.ladybug, R.drawable.leopard, R.drawable.bull, R.drawable.lion, R.drawable.cat,
             R.drawable.lobster, R.drawable.cow, R.drawable.rabbit, R.drawable.dog, R.drawable.snail, R.drawable.duck, R.drawable.turtle, R.drawable.elephant, R.drawable.bird};
 
