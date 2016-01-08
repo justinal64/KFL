@@ -32,7 +32,7 @@ public class MatchShapes extends AppCompatActivity{
     /*Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};*/
 
     Integer[] images = new Integer[]{R.drawable.fish, R.drawable.horse, R.drawable.ladybug, R.drawable.leopard, R.drawable.bird, R.drawable.bull, R.drawable.lion, R.drawable.cat,
-            R.drawable.lobster, R.drawable.cow, R.drawable.rabbit, R.drawable.dog, R.drawable.snail, R.drawable.duck, R.drawable.turtle, R.drawable.elephant, R.drawable.bird_contour};
+            R.drawable.lobster, R.drawable.cow, R.drawable.rabbit, R.drawable.dog, R.drawable.snail, R.drawable.duck, R.drawable.turtle, R.drawable.elephant, R.drawable.bird};
 
     int total_Right_Answers = 0;
 
@@ -62,7 +62,7 @@ public class MatchShapes extends AppCompatActivity{
 
         // Used to display image in position 0
 
-        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
+/*        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
 
 
             homeButton.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +73,7 @@ public class MatchShapes extends AppCompatActivity{
                     // listener for onClick
                     homePage();
                 }
-            });
+            });*/
 
 
         Button img = (Button) findViewById(R.id.img);
