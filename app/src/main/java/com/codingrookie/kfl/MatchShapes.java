@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.logging.Handler;
 
 /**
  * Created by justin.leggett on 12/17/2015.
@@ -252,7 +253,7 @@ public class MatchShapes extends AppCompatActivity{
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
 
@@ -276,9 +277,12 @@ public class MatchShapes extends AppCompatActivity{
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
+
+
         toast.show();
+
 
 
 
