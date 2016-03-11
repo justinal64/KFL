@@ -1,5 +1,6 @@
 package com.codingrookie.kfl;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -11,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -42,10 +46,6 @@ public class MatchShapes extends AppCompatActivity{
     int total_Right_Answers = 0;
 
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +58,7 @@ public class MatchShapes extends AppCompatActivity{
         // This adds the listener to the image
         scrambleArray();
         addListenerOnButton();
-
+        slide();
     }
 
     public void addListenerOnButton() {
@@ -171,6 +171,29 @@ public class MatchShapes extends AppCompatActivity{
     }
 
 
+    public void slide(){
+
+        // This animates the images to make them move from the side to there resprecitve positions
+        // Is there a way to use a for loop for this?
+        // How to I change the img name from Img to Img1, Img2...
+
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide);
+        Animation animation2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide1);
+        Animation animation3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide2);
+        /*Animation animation4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.question_image_button);*/
+
+        Button image = (Button)findViewById(R.id.img);
+        Button image1 = (Button)findViewById(R.id.img1);
+        Button image2 = (Button)findViewById(R.id.img2);
+        /*Button image3 = (Button)findViewById(R.id.question_Image_Button);*/
+
+        image.startAnimation(animation1);
+        image1.startAnimation(animation2);
+        image2.startAnimation(animation3);
+        /*image3.startAnimation(animation3);*/
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -210,6 +233,7 @@ public class MatchShapes extends AppCompatActivity{
     public void refreshImages() {
         scrambleArray();
         addListenerOnButton();
+        slide();
 
     }
 

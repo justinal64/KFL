@@ -54,7 +54,6 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-light"
-
                 android:textSize="26dp" />
 
             <Button
