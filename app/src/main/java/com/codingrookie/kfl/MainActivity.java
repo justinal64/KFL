@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayCorrectToast() {
 
-        LayoutInflater inflater = getLayoutInflater();
+/*        LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.congratz_Web_View));
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
-        toast.show();
+        toast.show();*/
 
     }
 
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayIncorrectToast() {
 
-        LayoutInflater inflater = getLayoutInflater();
+/*        LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.congratz_Web_View));
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
-        toast.show();
+        toast.show();*/
     }
 
 }

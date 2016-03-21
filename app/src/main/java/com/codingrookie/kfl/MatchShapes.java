@@ -243,19 +243,25 @@ public class MatchShapes extends AppCompatActivity{
      */
     public void displayCorrectToast() {
 
-        LayoutInflater inflater = getLayoutInflater();
+ /*       LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.congratz_Web_View));
 
         WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
-        image.loadUrl("file:///android_asset/congrats.gif");
+        image.loadUrl("file:///drawable/congrats.jpg"); */
 
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
+ /*       ImageView image = (ImageView) findViewById(R.id.customToast);
+        image.setImageResource(R.drawable.congratz);*/
+
+
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+        Toast toast = new Toast (this);
+        toast.setView(view);
         toast.show();
+
 
 
     }
@@ -265,7 +271,7 @@ public class MatchShapes extends AppCompatActivity{
      */
     public void displayIncorrectToast() {
 
-        LayoutInflater inflater = getLayoutInflater();
+/*        LayoutInflater inflater = getLayoutInflater();
 
         View layout = inflater.inflate(R.layout.custom_toast,
                 (ViewGroup) findViewById(R.id.congratz_Web_View));
@@ -281,7 +287,7 @@ public class MatchShapes extends AppCompatActivity{
         toast.setView(layout);
 
 
-        toast.show();
+        toast.show();*/
 
 
 

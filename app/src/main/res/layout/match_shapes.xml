@@ -8,10 +8,10 @@
     android:background="@drawable/ccountry"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity">
-    <RelativeLayout
+
+<!--    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <ImageView
             android:id="@+id/congratz"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:visibility="invisible"
             android:src="@drawable/sorry"/>
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <LinearLayout
         android:id="@+id/wholeLayout"
@@ -71,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
+
+
 
             <Button
                 android:id="@+id/img"
