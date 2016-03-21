@@ -1,9 +1,9 @@
 package com.codingrookie.kfl;
 
-import android.animation.Animator;
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -14,11 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
-import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.Arrays;
@@ -26,7 +22,8 @@ import java.util.Collections;
 import java.util.logging.Handler;
 
 /**
- * Created by justin.leggett on 12/17/2015.
+ * Phil 4:13
+ * I can do all things through Christ who gives me strength.
  */
 public class MatchShapes extends AppCompatActivity{
 
@@ -69,22 +66,6 @@ public class MatchShapes extends AppCompatActivity{
         // Chooses a random image between 0 - 2 of the array images
         Button question_Image_Button = (Button) findViewById(R.id.question_Image_Button);
         int imageIds = (int) (Math.random() * 3);
-
-        // Used to display image in position 0
-
-/*        ImageButton homeButton = (ImageButton) findViewById(R.id.homeButton);
-
-
-            homeButton.setOnClickListener(new View.OnClickListener() {
-
-
-                @Override
-                public void onClick(View v) {
-                    // listener for onClick
-                    homePage();
-                }
-            });*/
-
 
         final Button img = (Button) findViewById(R.id.img);
 
@@ -243,26 +224,25 @@ public class MatchShapes extends AppCompatActivity{
      */
     public void displayCorrectToast() {
 
- /*       LayoutInflater inflater = getLayoutInflater();
 
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.congratz_Web_View));
-
-        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
-        image.loadUrl("file:///drawable/congrats.jpg"); */
-
- /*       ImageView image = (ImageView) findViewById(R.id.customToast);
-        image.setImageResource(R.drawable.congratz);*/
+        // Trying to run this in a new thread
+        MyAsyncTask myTask = new MyAsyncTask(this);
+        myTask.execute("http://developer.android.com");
 
 
+
+
+
+
+/*
         LayoutInflater inflater = getLayoutInflater();
-        View view = inflater.inflate(R.layout.custom_toast,
+        View view = inflater.inflate(R.layout.correct_custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
         Toast toast = new Toast (this);
         toast.setView(view);
-        toast.show();
-
-
+        toast.setGravity(Gravity.FILL, 0, 0);
+        toast.show();*/
 
     }
 
@@ -271,40 +251,15 @@ public class MatchShapes extends AppCompatActivity{
      */
     public void displayIncorrectToast() {
 
-/*        LayoutInflater inflater = getLayoutInflater();
 
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.congratz_Web_View));
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.incorrect_custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
-
-
-        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
-        image.loadUrl("file:///android_asset/sorry.gif");
-
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);
-
-
-        toast.show();*/
-
-
-
-
-
-
-        // Hide the whole screen
-/*        LinearLayout wholeLayout = (LinearLayout) findViewById(R.id.wholeLayout);
-        wholeLayout.setVisibility(View.INVISIBLE);
-
-        // Disable incorrectAnswer
-        ImageView incorrectAnswer = (ImageView) findViewById(R.id.sorry);
-        incorrectAnswer.setVisibility(View.VISIBLE);*/
-
-
-/*        incorrectAnswer.setVisibility(View.INVISIBLE);
-        wholeLayout.setVisibility(View.VISIBLE);*/
+        Toast toast = new Toast (this);
+        toast.setView(view);
+        toast.setGravity(Gravity.FILL, 0, 0);
+        toast.show();
 
     }
 
