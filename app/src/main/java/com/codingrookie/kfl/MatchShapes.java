@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
@@ -16,10 +17,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
+import android.os.Handler;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.logging.Handler;
+
 
 /**
  * Phil 4:13
@@ -80,7 +82,6 @@ public class MatchShapes extends AppCompatActivity{
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     displayCorrectToast();
-                    refreshImages();
                 }
             });
         } else {
@@ -104,7 +105,6 @@ public class MatchShapes extends AppCompatActivity{
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     displayCorrectToast();
-                    refreshImages();
                 }
             });
         } else {
@@ -129,7 +129,6 @@ public class MatchShapes extends AppCompatActivity{
                     total_Right_Answers = total_Right_Answers + 1;
                     Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
                     displayCorrectToast();
-                    refreshImages();
                 }
             });
         } else {
@@ -226,15 +225,14 @@ public class MatchShapes extends AppCompatActivity{
 
 
         // Trying to run this in a new thread
-        MyAsyncTask myTask = new MyAsyncTask(this);
-        myTask.execute("http://developer.android.com");
+/*        MyAsyncTask myTask = new MyAsyncTask(this);
+        myTask.execute("http://developer.android.com");*/
 
 
 
 
 
 
-/*
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.correct_custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
@@ -242,7 +240,15 @@ public class MatchShapes extends AppCompatActivity{
         Toast toast = new Toast (this);
         toast.setView(view);
         toast.setGravity(Gravity.FILL, 0, 0);
-        toast.show();*/
+        toast.show();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                refreshImages();
+            }
+        }, 2000);
+
 
     }
 
