@@ -239,6 +239,7 @@ public class MatchShapes extends AppCompatActivity{
 
         Toast toast = new Toast (this);
         toast.setView(view);
+        toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.FILL, 0, 0);
         toast.show();
 
@@ -270,7 +271,7 @@ public class MatchShapes extends AppCompatActivity{
     }
 
     public void homePage(){
-        Intent intent = new Intent(this, StartPage.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

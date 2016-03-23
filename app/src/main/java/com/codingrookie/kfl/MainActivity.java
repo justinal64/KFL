@@ -5,6 +5,7 @@ package com.codingrookie.kfl;
 * Christ who strengthens me.
  */
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -28,123 +29,47 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * Duration of wait
-     **/
-    private final int SPLASH_DISPLAY_LENGTH = 1000;
-
-    // Used to display random images
-    Integer[] images = new Integer[]{R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5};
-
-    int total_Right_Answers = 0;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        /*Removed the Toolbar*/
+        setContentView(R.layout.content_main );
 /*        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
+        setSupportActionBar(toolbar);
 
-        // This adds the listener to the image
-        addListenerOnButton();
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
 
-    }
+        ImageButton img = (ImageButton) findViewById(R.id.homeButton);
 
-    public void addListenerOnButton() {
-
-        /*
-        * Scramble the images in the array images
-         */
-        scrambleArray();
-
-
-        // Sets the question_Image_Button to either image 0 - 2, which will match
-        // Chooses a random image between 0 - 2 of the array images
-        ImageButton question_Image_Button = (ImageButton) findViewById(R.id.question_Image_Button);
-        int imageIds = (int) (Math.random() * 3);
-
-        // Used to display image in position 0
-        ImageButton img = (ImageButton) findViewById(R.id.img);
-
-        if (imageIds == 0) {
-            img.setOnClickListener(new View.OnClickListener() {
+        img.setOnClickListener(new View.OnClickListener() {
 
 
-                @Override
-                public void onClick(View v) {
-                    total_Right_Answers = total_Right_Answers + 1;
-                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    displayCorrectToast();
-                    refreshImages();
-                }
-            });
-        } else {
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayIncorrectToast();
-                }
-            });
-        }
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                matchShapes();
+            }
+        });
 
-        // Used to display image in position 1
-        ImageButton img1 = (ImageButton) findViewById(R.id.img1);
+        ImageButton img1 = (ImageButton) findViewById(R.id.about);
 
-        if (imageIds == 1) {
-            img1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayCorrectToast();
-                    total_Right_Answers = total_Right_Answers + 1;
-                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImages();
-                }
-            });
-        } else {
-            img1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayIncorrectToast();
-                }
-            });
-        }
+        img1.setOnClickListener(new View.OnClickListener() {
 
-        // Used to display image in position 2
-        ImageButton img2 = (ImageButton) findViewById(R.id.img2);
 
-        if (imageIds == 2) {
-            img2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayCorrectToast();
-                    total_Right_Answers = total_Right_Answers + 1;
-                    Log.v("MainActivity", "total_Right_Answers = " + total_Right_Answers);
-                    refreshImages();
-                }
-            });
-        } else {
-            img2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    displayIncorrectToast();
-                }
-            });
-        }
-
-        // Displays the images that the user is trying to match.
-        question_Image_Button.setImageResource(images[imageIds]);
-
-        // Displays images in position 0/1/2 respectively.
-        img.setImageResource(images[0]);
-        img1.setImageResource(images[1]);
-        img2.setImageResource(images[2]);
-
+            @Override
+            public void onClick(View v) {
+                // listener for onClick
+                about();
+            }
+        });
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -168,63 +93,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    * Scrambles the images in the array
-    */
-    public void scrambleArray() {
-
-        Collections.shuffle(Arrays.asList(images));
+    public void about(){
+        // Call SortShapes.java
+        Intent intent = new Intent(this, About.class);
+        startActivity(intent);
     }
 
-    /*
-     * This is used to refresh img, img1, and img2 and question_Image_Button once
-     * the user has picked the matching images.
-    */
 
-    public void refreshImages() {
-        scrambleArray();
-        addListenerOnButton();
-    }
-
-    /*
-    * Displays a custom toast when the user gets the answer correct
-     */
-    public void displayCorrectToast() {
-
-/*        LayoutInflater inflater = getLayoutInflater();
-
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.congratz_Web_View));
-
-        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
-        image.loadUrl("file:///android_asset/congrats.gif");
-
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();*/
-
-    }
-
-    /*
-    * Displays a custom message when the user selects the wrong answer.
-     */
-    public void displayIncorrectToast() {
-
-/*        LayoutInflater inflater = getLayoutInflater();
-
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) findViewById(R.id.congratz_Web_View));
-
-        WebView image = (WebView) layout.findViewById(R.id.congratz_Web_View);
-        image.loadUrl("file:///android_asset/sorry.gif");
-
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();*/
+    public void matchShapes(){
+        // Call SortShapes.java
+        Intent intent = new Intent(this, MatchShapes.class);
+        startActivity(intent);
     }
 
 }
