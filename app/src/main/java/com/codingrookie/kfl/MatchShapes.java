@@ -223,16 +223,6 @@ public class MatchShapes extends AppCompatActivity{
      */
     public void displayCorrectToast() {
 
-
-        // Trying to run this in a new thread
-/*        MyAsyncTask myTask = new MyAsyncTask(this);
-        myTask.execute("http://developer.android.com");*/
-
-
-
-
-
-
         LayoutInflater inflater = getLayoutInflater();
         View view = inflater.inflate(R.layout.correct_custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
@@ -242,6 +232,7 @@ public class MatchShapes extends AppCompatActivity{
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.FILL, 0, 0);
         toast.show();
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -274,4 +265,5 @@ public class MatchShapes extends AppCompatActivity{
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }
