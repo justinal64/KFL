@@ -227,6 +227,7 @@ public class MatchShapes extends AppCompatActivity{
         View view = inflater.inflate(R.layout.correct_custom_toast,
                 (ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
+
         Toast toast = new Toast (this);
         toast.setView(view);
         toast.setDuration(Toast.LENGTH_SHORT);

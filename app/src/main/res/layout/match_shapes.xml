@@ -9,26 +9,26 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity">
 
-<!--    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/congratz"
+    <!--    <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:visibility="invisible"
-            android:src="@drawable/congratz"/>
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/congratz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:visibility="invisible"
+                android:src="@drawable/congratz"/>
 
-        <ImageView
-            android:id="@+id/sorry"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:visibility="invisible"
-            android:src="@drawable/sorry"/>
+            <ImageView
+                android:id="@+id/sorry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:visibility="invisible"
+                android:src="@drawable/sorry"/>
 
-    </RelativeLayout>-->
+        </RelativeLayout>-->
 
     <LinearLayout
         android:id="@+id/wholeLayout"
@@ -43,6 +43,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <!--            <Button
+                            android:id="@+id/home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/home"
+                            android:textColor="#ffffff" />-->
+
 
             <TextView
                 android:id="@+id/matchingImage"
@@ -50,20 +58,19 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="2dp"
+                android:fontFamily="sans-serif-light"
                 android:text="Find the Matching Image"
                 android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-light"
-                android:textSize="26dp" />
+                android:textSize="26dp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/question_Image_Button"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
+                android:layout_below="@id/matchingImage"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/cat"
-                android:textColor="#ffffff"
-                android:layout_below="@id/matchingImage"/>
+                android:background="@drawable/cat" />
 
         </RelativeLayout>
 
@@ -73,35 +80,34 @@
             android:layout_marginBottom="20dp">
 
 
-
             <Button
                 android:id="@+id/img"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/cat"
-                android:textColor="#ffffff"
-                android:layout_alignParentBottom="true"/>
+                android:textColor="#ffffff" />
 
 
             <Button
                 android:id="@+id/img1"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/dog"
-                android:textColor="#ffffff"
-                android:layout_alignParentBottom="true" />
+                android:textColor="#ffffff" />
 
 
             <Button
                 android:id="@+id/img2"
                 android:layout_width="150dp"
                 android:layout_height="125dp"
+                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/lobster"
-                android:textColor="#ffffff"
-                android:layout_alignParentBottom="true" />
+                android:textColor="#ffffff" />
 
         </RelativeLayout>
 
